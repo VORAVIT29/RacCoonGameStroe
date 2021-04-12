@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sigin</title>
+</head>
+
+<body>
+    <center>
+        <h1>Log in</h1>
+        <form action="/sigin" method="post">
+            <label for="name">ชื่อ</label>
+            <input type="text" name="name" required><br>
+            <label for="pass">รหัสผ่าน</label>
+            <input type="text" name="pass"><br><br>
+            <input type="submit" value="Keep" name="sub">
+        </form>
+        <a href="/"><button>Back</button></a>
+        <% if(locals.error == true){ %>
+            <h4 style="color: red;">คุณใส่ username หรือ รหัสผ่านไม่ถูกต้อง</h4>
+            <% } %>
+    </center>
+</body>
+
+</html>
