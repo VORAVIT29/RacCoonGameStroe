@@ -14,7 +14,6 @@ app.use(session({
 }))
 
 app.get('/', (req, res) => {
-
     if (req.session.name) { //ตรวจสอบว่าเคยล็อคอินค้างไว้ไหม
         res.redirect('/introduce')
 
@@ -44,8 +43,8 @@ app.all('/sigin', (req, res) => {
             req.session.name = req.body.name
             req.session.pass = req.body.pass
             req.session.age = req.body.age
-                //res.redirect('/introduce')
-            res.redirect('/introduce')
+                //res.render('index')
+            res.redirect('/Menu')
 
         } else {
             res.render('sigin', { error: error = true })
@@ -54,6 +53,10 @@ app.all('/sigin', (req, res) => {
         res.render('sigin')
     }
 
+})
+
+app.all('/Menu', (req, res) => {
+    res.render('index')
 })
 
 app.get('/logout', (req, res) => { //ออกจากระบบ
@@ -67,5 +70,5 @@ app.get('/logout', (req, res) => { //ออกจากระบบ
 let port = 3000
 app.listen(port, (req, res) => {
     console.log('Server Start.....')
-    console.log(`http://127.0.0.1:${port}/`)
+    console.log(`http://localhost:${port}/`)
 })
