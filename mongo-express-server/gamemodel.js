@@ -1,50 +1,53 @@
 var mongoose = require("mongoose");
 
-var gameSchema = mongoose.Schema({
+var gameSchema = mongoose.Schema(
+  {
     // กำหนด ชื่อและชนิดของ document เรา
     image: {
-        type: String
+      type: String
     },
     image1: {
-        type: String
+      type: String
     },
     image2: {
-        type: String
+      type: String
     },
     image3: {
-        type: String
+      type: String
     },
     image4: {
-        type: String
+      type: String
     },
     name: {
-        type: String
+      type: String
     },
     price: {
-        type: Number
+      type: Number
     },
     detail: {
-        type: String
+      type: String
     },
     system: {
-        type: String
+      type: String
     },
     publisher: {
-        type: String
+      type: String
     },
     developer: {
-        type: String
+      type: String
     },
     downlaod: {
-        type: String
+      type: String
     },
     video: {
-        type: String
+      type: String
     }
-}, {
+  },
+  {
     // กำหนด collection ของ MongoDB หรือจะไม่กำหนดก็ได้
     collection: "GAMES"
-});
+  }
+);
 
 // ถ้าไม่ได้กำหนด collection ข้างบน default จะเป็น "foods"
 var Game = mongoose.model("games", gameSchema);
