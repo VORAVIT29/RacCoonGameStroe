@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 var gameSchema = mongoose.Schema(
   {
-    // กำหนด ชื่อและชนิดของ document เรา 
+    // กำหนด ชื่อและชนิดของ document
     image: {
       type: String
     },
